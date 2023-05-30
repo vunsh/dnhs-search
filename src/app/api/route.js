@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 
-import { ChatGPTUnofficialProxyAPI } from "chatgpt";
+import { gpt } from "chatgpt-api-free";
 
-const ai = new ChatGPTUnofficialProxyAPI({
-    accessToken: process.env.ACCESS_TOKEN,
-    apiReverseProxyUrl: 'https://api.pawan.krd/backend-api/conversation',
+import data from '../../../data.json'
+
+const model = new gpt({
+    'api_key': 'pk-amtqoxijWotmlQZpRLqebuKIOOkQSiouVTWQZYSCcIcIbHEK',
+    'temperature': 0.9, 
+    'max_tokens': 256 // max: 4090
 })
+
+const jsonString = JSON.stringify(data)
+
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
@@ -13,6 +19,18 @@ export async function GET(request) {
     if (!q) {
         return new Response("Bad Request", { status: 400 });
     }
-    const res = await ai.sendMessage(q);
+    const completion = await model.chat_completion([
+        {
+            'role': 'system',
+            'content': `You are a friendly question answer bot! Here is the data you have ${jsonString}. If you don't know the answer, you can say you don't have data on this yet.}`
+    
+        },
+        {
+            'role': 'user',
+            'content': `${q}`
+        }
+    ])
+    const res = completion.choices[0].message.content
+
     return NextResponse.json({ res });
 }

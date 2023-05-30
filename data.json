@@ -1,0 +1,21 @@
+{
+    "Del Norte High School (DNHS)": {
+        "city": "San Diego",
+        "high_school": true,
+        "state": "California",
+        "zipcode": "92127",
+        "address": "16601 Nighthawk Ln",
+        "prom": {
+            "date": "2023-05-10",
+            "location": "Birch Aquarium at Scripps Institution of Oceanography",
+            "address": "2300 Expedition Way, La Jolla, CA 92037",
+            "time": "19:00:00"
+        },
+        "graduation": {
+            "date": "2023-06-09",
+            "location": "Del Norte High School",
+            "address": "16601 Nighthawk Ln, San Diego, CA 92127",
+            "time": "17:00:00"
+        }
+    }
+}
