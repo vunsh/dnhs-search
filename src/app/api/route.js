@@ -5,7 +5,7 @@ import { gpt } from "chatgpt-api-free";
 import data from '../../../data.json'
 
 const model = new gpt({
-    'api_key': 'pk-amtqoxijWotmlQZpRLqebuKIOOkQSiouVTWQZYSCcIcIbHEK',
+    'api_key': process.env.API_KEY,
     'temperature': 0.9, 
     'max_tokens': 256 // max: 4090
 })
@@ -22,7 +22,7 @@ export async function GET(request) {
     const completion = await model.chat_completion([
         {
             'role': 'system',
-            'content': `You are a friendly question answer bot! Here is the data you have ${jsonString}. If you don't know the answer, you can say you don't have data on this yet.}`
+            'content': `You are a friendly question answer bot for the school Del Norte High School! Here is the data you have ${jsonString}. If you don't know the answer, you can say you don't have data on this yet.}`
     
         },
         {
