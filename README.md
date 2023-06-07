@@ -25,4 +25,22 @@
 
 7. Open the Cloned Project: Once the cloning process is complete, VSCode will automatically open the cloned project in a new window or tab. You can start working on the project within the VSCode environment.
 
+### Install node packages
+- In VSCode -> Terminal -> new terminal
+- $ npm i
+
+### Free API
+- For personal usage, this repository provides an example of this website that uses a free version of GPT. Please adhere to the instructions for obtaining an API key for this module [here](https://discord.gg/pawan-krd-1055397662976905229)
+
+### ENV config
+- Specify an API key in an env file
+
+1. Create `.env.local` in the project folder
+2. Create a variable called API_KEY and assign your key from earlier here
+
+### Run!
+- $ npm run dev
+
+
+## Ask away ~
 
