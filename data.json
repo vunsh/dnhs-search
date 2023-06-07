@@ -16,6 +16,10 @@
             "location": "Del Norte High School",
             "address": "16601 Nighthawk Ln, San Diego, CA 92127",
             "time": "17:00:00"
+        },
+        "office-hours":{
+            "days": "Modnesday, Tuesday, Thursday",
+            "when": "After fourth period"
         }
     }
 }
